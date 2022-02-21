@@ -1,0 +1,140 @@
+/* resetando as propriedades do navegador */
+* {
+   margin: 0;
+   padding: 0;
+   border: 0;
+   -webkit-box-sizing: border-box;
+   box-sizing: border-box;
+   list-style: none;
+   text-decoration: none;
+   outline: none;
+}
+
+:root {
+   --cor-primaria: #0063b2ff;
+   --cor-secondaria: #9cc3d5ff;
+   --cor-branco: #ffff;
+}
+
+/* corpo do site */
+body {
+   font-family: 'Roboto', sans-serif;
+   background: var(--cor-primaria);
+}
+
+header {
+   width: 100vw;
+   /* border: 1px solid black; */
+   margin-bottom: 15px;
+}
+
+header ul {
+   display: flex;
+   justify-content: center;
+   height: 80px;
+}
+
+header ul li {
+   padding: 20px;
+   margin: auto 5px;
+}
+
+header ul li a {
+   color: var(--cor-branco);
+   font-weight: 600;
+   text-transform: capitalize;
+   font-size: 20px;
+   position: relative;
+}
+
+header ul li a:hover {
+   color: var(--cor-secondaria);
+}
+
+header ul li a::after {
+   content: '';
+   width: 0px;
+   height: 5px;
+   background-color: black;
+   position: absolute;
+   left: 0;
+   bottom: -10px;
+}
+
+header ul li a:hover::after {
+   width: 100%;
+   -webkit-transition: width 200ms ease-in-out;
+   transition: width 200ms ease-in-out;
+}
+
+main {
+   width: 940px;
+   height: auto;
+   margin: 0 auto;
+}
+
+.card {
+   display: flex;
+   margin: 0 auto;
+   width: 940px;
+   border: 1px solid black;
+   border-radius: 16px;
+   box-shadow: 10px 15px 1px 5px rgba(0, 0, 0, 0.2);
+   position: absolute;
+   height: 600px;
+}
+
+.avatar {
+   border-radius: 16px 0 0 16px;
+   width: 40%;
+   animation-name: boximg;
+   animation-duration: 1000ms;
+   animation-delay: 900ms;
+   animation-timing-function: ease-in;
+}
+
+@keyframes boximg {
+   0% {
+      height: 1px;
+   }
+
+   100% {
+      height: 600px;
+   }
+}
+.details {
+   width: 60%;
+   padding: 15px;
+   /* margin: auto 0; */
+}
+
+.details .title h1,
+.details .title h3,
+.details .title h4 {
+   margin-bottom: 5px;
+   color: aliceblue;
+   position: relative;
+}
+
+.title h4::after {
+   content: '';
+   width: 510px;
+   height: 8px;
+   left: 0;
+   bottom: -15px;
+   position: absolute;
+   background-color: aliceblue;
+}
+
+.details ul {
+   margin-top: 50px;
+}
+
+.details ul li {
+   color: aliceblue;
+   padding: 20px 0 20px 0;
+   border-bottom: 5px solid #3333;
+}
+.details ul li:first-child {
+   border-top: 5px solid #3333;
+}
