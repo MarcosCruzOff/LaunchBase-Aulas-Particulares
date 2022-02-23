@@ -1,6 +1,8 @@
 const express = require('express')
 const nunjucks = require('nunjucks')
 
+const teachers = require('./teachers.js')
+
 const server = express()
 
 server.use(express.urlencoded({ extended: true }))
@@ -24,9 +26,7 @@ server.get('/main/cadastro', function (req, res) {
    return res.render('form')
 })
 
-server.post('/main', function (req, res) {
-   return res.send(req.body)
-})
+server.post('/main', teachers.post)
 
 server.listen(5000, function () {
    console.log('Server on!')

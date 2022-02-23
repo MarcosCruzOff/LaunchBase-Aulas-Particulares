@@ -1,0 +1,13 @@
+{
+  "teachers": [
+    {
+      "id": 0,
+      "avatar_url": "https://i.pinimg.com/originals/fc/60/ab/fc60ab8c65cad8a7baf4c111658073d5.png",
+      "nome": "Felipe",
+      "idade": "1991-05-08",
+      "escolaridade": "Superior",
+      "modalidade": "presencial",
+      "materia": "Ciência da Computação"
+    }
+  ]
+}

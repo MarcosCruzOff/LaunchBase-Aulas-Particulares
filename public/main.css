@@ -82,7 +82,7 @@ main {
    display: flex;
    /* margin: 0 auto; */
    width: 940px;
-   border: 1px solid var(--cor-primaria);
+   /* border: 1px solid var(--cor-primaria); */
    background-color: var(--cor-branco);
    border-radius: 16px;
    box-shadow: 10px 15px 1px 5px rgba(0, 0, 0, 0.2);

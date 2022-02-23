@@ -27,3 +27,15 @@ Neste caso eu preferi instalar as libs citadas a cima como devDependencies. As c
 ## Mudanças
 
 Estilização para o desafio 4-2 modificado
+
+## :rocket: Sobre o desafio: 4-3 <i> Formulário e Rota de cadastro do Professor </i>
+
+Nessa etapa foi criado um formulário de cadastro do professor e uma rota do tipo post que irá realizar as validações e salvar os dados enviados.
+
+## Arquivos
+
+-  Foi adicionado um arquivo `teachers.js` que é responsável pelo CRUD da aplicação, por hora foi desenvolvido apenas o método POST.
+
+-  Foi adicionado um arquivo `database.json` que será o responsável por armazenar as informações dos cadastrados
+
+-  Houve mudanças no arquivo `server.js` agora inserimos novas rotas a este
