@@ -23,3 +23,7 @@ Esse é o primeiro desafio da sequência de criação de um site de aulas partic
 Nessa etapa adicionei uma lib o `browser-sync` e o `npm-run-all` e comecei a criação do card para apresentação das informações do professor.
 
 Neste caso eu preferi instalar as libs citadas a cima como devDependencies. As configurações da mesma se encontra no arquivo `package.json`
+
+## Mudanças
+
+Estilização para o desafio 4-2 modificado
