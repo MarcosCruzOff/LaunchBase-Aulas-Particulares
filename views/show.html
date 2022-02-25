@@ -4,14 +4,14 @@
       <meta charset="UTF-8" />
       <meta http-equiv="X-UA-Compatible" content="IE=edge" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <link rel="stylesheet" href="main.css" />
+      <link rel="stylesheet" href="/main.css" />
       <title>Aulas particulares</title>
    </head>
    <body>
       <header>
          <ul>
             <li><a href="/">Teachers</a></li>
-            <li><a href="/teachers/cadastro">Students</a></li>
+            <li><a href="/main/cadastro">Students</a></li>
          </ul>
       </header>
 
@@ -20,7 +20,7 @@
             <section
                class="avatar"
                style="
-                  background: url(https://source.unsplash.com/collection/1039064)
+                  background: url({{professor.avatar_url}})
                      no-repeat center center / cover;
                "
             ></section>
@@ -28,27 +28,27 @@
                <ul>
                   <li>
                      <h1>Professor</h1>
-                     <p>Marcos</p>
+                     <p>{{professor.nome}}</p>
                   </li>
                   <li>
                      <h3>Idade</h3>
-                     <p>31</p>
+                     <p>{{professor.idade}}</p>
                   </li>
                   <li>
                      <h3>Matéria</h3>
-                     <p>Fisíca</p>
+                     <p>{{professor.materia}}</p>
                   </li>
                   <li>
                      <h3>Modalidade</h3>
-                     <p>Presencial</p>
+                     <p>{{professor.modalidade}}</p>
                   </li>
                   <li>
                      <h3>Grau Escolar</h3>
-                     <p>Doutorado</p>
+                     <p>{{professor.escolaridade}}</p>
                   </li>
                   <li>
                      <h3>Desde:</h3>
-                     <p>10/10/2019</p>
+                     <p>{{professor.criado_em}}</p>
                   </li>
                </ul>
             </section>

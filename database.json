@@ -2,12 +2,13 @@
   "teachers": [
     {
       "id": 0,
-      "avatar_url": "https://i.pinimg.com/originals/fc/60/ab/fc60ab8c65cad8a7baf4c111658073d5.png",
-      "nome": "Felipe",
-      "idade": "1991-05-08",
+      "avatar_url": "https://cdn.maioresemelhores.com/imagens/melhores-animes-de-todos-os-tempos-segundo-os-fas-og.jpg",
+      "nome": "xereca",
+      "idade": "1995-01-25",
       "escolaridade": "Superior",
       "modalidade": "presencial",
-      "materia": "Ciência da Computação"
+      "materia": "física",
+      "criado_em": 1645741685722
     }
   ]
 }

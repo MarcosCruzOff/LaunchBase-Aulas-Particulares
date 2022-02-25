@@ -15,18 +15,18 @@ nunjucks.configure('views', {
 })
 
 server.get('/', function (req, res) {
-   return res.redirect('/main')
+   return res.redirect('/teachers')
 })
 
-server.get('/main', function (req, res) {
-   return res.render('index')
-})
+server.get('/teachers', teachers.index)
 
-server.get('/main/cadastro', function (req, res) {
+server.get('/teachers/cadastro', function (req, res) {
    return res.render('form')
 })
 
-server.post('/main', teachers.post)
+server.post('/teachers', teachers.post)
+
+server.get('/teachers/show/:id', teachers.show)
 
 server.listen(5000, function () {
    console.log('Server on!')

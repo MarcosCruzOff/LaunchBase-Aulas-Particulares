@@ -16,7 +16,7 @@
       </header>
 
       <main>
-         <form class="card" action="/main" method="POST">
+         <form class="card" action="/teachers" method="POST">
             <section
                class="avatar"
                style="
@@ -74,8 +74,8 @@
                            {% endif %}>Superior
                         </option>
                   
-                        <option value="posgraduacao" 
-                           {% if membro.blood == "posgraduacao" %}
+                        <option value="Pós-graduação" 
+                           {% if membro.blood == "Pós-graduação" %}
                            selected
                            {% endif %}>Pós-graduação
                         </option>
@@ -137,7 +137,7 @@
                         type="text"
                         name="materia"
                         placeholder="Separe o Serviço por virgula"
-                        value="{{ instrutor.services }}"
+                        
                      />
                   </div>
                </div>
