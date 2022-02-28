@@ -1,0 +1,80 @@
+<!--FOTO PERFIL-->
+<div class="item">
+   <div>Avatar URL</div>
+   <div>
+      <input 
+         type="url" 
+         name="avatar_url" 
+         id="" 
+         placeholder="https://" 
+         value="{{ teacher.avatar_url }}">
+   </div>
+</div>
+
+<!--NOME INSTRUTOR-->
+<div class="item">
+   <div>Professor</div>
+   <div>
+      <input 
+         type="text" 
+         name="nome" 
+         id="" 
+         placeholder="Nome do Professor" 
+         value="{{ teacher.nome }}">
+   </div>
+</div>
+
+<!--DATA DE NASCIMENTO INSTRUTOR-->
+<div class="item">
+   <div>Data de Nascimento</div>
+   <div>
+      <input 
+         type="date" 
+         name="idade" 
+         value="{{ teacher.idade }}">
+   </div>
+</div>
+
+<!--SEXO INSTRUTOR-->
+<div class="item">
+   <div>Sexo</div>
+
+   <div>
+      <span>
+         <input 
+            type="radio" 
+            name="gender" 
+            id="" 
+            value="M" 
+            {% if teacher.gender == "M" %} 
+               checked 
+            {% endif %}>
+            Masculino
+      </span>
+      <span>
+         <input 
+            type="radio" 
+            name="gender" 
+            id="" 
+            value="F" 
+            {% if teacher.gender == "F" %}
+               checked 
+            {% endif %}>
+            Feminino
+      </span>
+   </div>
+
+</div>
+             
+<!--SERVIÇOS PRESTADO PELO INSTRUTOR-->
+<div class="item">
+   <div>Area de Atuação</div>
+   <div>
+      <input 
+         type="text" 
+         name="materia" 
+         placeholder="Separe o Serviço por virgula" 
+         value="{{ teacher.materia }}">
+   </div>
+</div>
+   <button type="submit">Salvar</button>

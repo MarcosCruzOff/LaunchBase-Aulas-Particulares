@@ -1,14 +1,3 @@
 {
-  "teachers": [
-    {
-      "id": 0,
-      "avatar_url": "https://cdn.maioresemelhores.com/imagens/melhores-animes-de-todos-os-tempos-segundo-os-fas-og.jpg",
-      "nome": "xereca",
-      "idade": "1995-01-25",
-      "escolaridade": "Superior",
-      "modalidade": "presencial",
-      "materia": "física",
-      "criado_em": 1645741685722
-    }
-  ]
+  "teachers": []
 }

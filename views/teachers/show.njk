@@ -1,56 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
    <head>
-      <meta charset="UTF-8" />
-      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <link rel="stylesheet" href="main.css" />
+      <meta charset="UTF-8"/>
+      <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+      <link rel="stylesheet" href="/main.css"/>
       <title>Aulas particulares</title>
    </head>
    <body>
       <header>
          <ul>
             <li><a href="/">Teachers</a></li>
-            <li><a href="/teachers/cadastro">Students</a></li>
+            <li><a href="/main/create">Students</a></li>
          </ul>
       </header>
-
       <main>
          <div class="card">
             <section
                class="avatar"
-               style="
-                  background: url(https://source.unsplash.com/collection/1039064)
-                     no-repeat center center / cover;
-               "
-            ></section>
+               style=" background: url({{teacher.avatar_url}})
+                        no-repeat center center / cover; ">
+            </section>
             <section class="details">
                <ul>
                   <li>
                      <h1>Professor</h1>
-                     <p>Marcos</p>
+                     <p>{{teacher.nome}}</p>
                   </li>
                   <li>
                      <h3>Idade</h3>
-                     <p>31</p>
+                     <p>{{teacher.idade}}</p>
                   </li>
                   <li>
                      <h3>Matéria</h3>
-                     <p>Fisíca</p>
+                     <p>{{teacher.materia}}</p>
                   </li>
                   <li>
                      <h3>Modalidade</h3>
-                     <p>Presencial</p>
+                     <p>{{teacher.modalidade}}</p>
                   </li>
                   <li>
                      <h3>Grau Escolar</h3>
-                     <p>Doutorado</p>
+                     <p>{{teacher.escolaridade}}</p>
                   </li>
                   <li>
                      <h3>Desde:</h3>
-                     <p>10/10/2019</p>
+                     <p>{{teacher.criado_em}}</p>
                   </li>
                </ul>
+               <a href="/teachers/{{teacher.id}}/edit" class="button">
+                  Editar
+               </a>
             </section>
          </div>
       </main>
