@@ -1,3 +1,14 @@
 {
-  "teachers": []
+  "teachers": [
+    {
+      "id": 0,
+      "avatar_url": "https://i.pinimg.com/originals/fc/60/ab/fc60ab8c65cad8a7baf4c111658073d5.png",
+      "nome": "Marcos",
+      "idade": 926121600000,
+      "graduacao": "Doutorado",
+      "modalidade": "presencial",
+      "materia": "física, matematica",
+      "criado_em": 1646086821278
+    }
+  ]
 }

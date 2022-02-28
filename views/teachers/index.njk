@@ -1,58 +1,42 @@
-<!DOCTYPE html>
-<html lang="en">
-   <head>
-      <meta charset="UTF-8" />
-      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <link rel="stylesheet" href="main.css" />
-      <title>Aulas particulares</title>
-   </head>
-   <body>
-      <header>
-         <ul>
-            <li><a href="/">Teachers</a></li>
-            <li><a href="/teachers/create">Students</a></li>
-         </ul>
-      </header>
+{% extends "layout.njk" %}
 
-      <main>
-         <div class="card">
-            <section
-               class="avatar"
-               style="
-                  background: url(https://source.unsplash.com/collection/1039064)
-                     no-repeat center center / cover;
-               "
-            ></section>
-            <section class="details">
-               <ul>
-                  <li>
-                     <h1>Professor</h1>
-                     <p>Marcos</p>
-                  </li>
-                  <li>
-                     <h3>Idade</h3>
-                     <p>31</p>
-                  </li>
-                  <li>
-                     <h3>Matéria</h3>
-                     <p>Fisíca</p>
-                  </li>
-                  <li>
-                     <h3>Modalidade</h3>
-                     <p>Presencial</p>
-                  </li>
-                  <li>
-                     <h3>Grau Escolar</h3>
-                     <p>Doutorado</p>
-                  </li>
-                  <li>
-                     <h3>Desde:</h3>
-                     <p>10/10/2019</p>
-                  </li>
-               </ul>
-            </section>
-         </div>
-      </main>
-   </body>
-</html>
+{% block content %}
+
+  <div class="card tabela-conteiner">
+  
+  <table width="100%">
+    <a href="/teachers/create">Novo</a>
+    <!--CABEÇALHO DA TABELA-->
+    <thead>
+      <tr>        
+        <th>Instrutor</th>
+        <th>Atendimento</th>
+        <th>Ação</th>
+      </tr>
+    </thead>
+    <!--CORPO DA TABELA-->
+    <tbody>
+      {% for teacher in teachers %}
+
+        <tr>
+          
+          <td>
+            <span style="background-image:url({{teacher.avatar_url}})"></span>
+            {{teacher.nome}}
+          </td>
+
+          <td data-label="Atendimento"> {{teacher.materia}} </td>
+
+          <td><a href="/teachers/{{teacher.id}}">ver</a></td>
+
+        </tr>
+
+      {% endfor %}
+
+    </tbody>
+
+  </table>  
+    
+  </div>
+  
+{% endblock content %}

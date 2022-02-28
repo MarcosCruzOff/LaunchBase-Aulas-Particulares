@@ -1,58 +1,56 @@
-<!DOCTYPE html>
-<html lang="en">
-   <head>
-      <meta charset="UTF-8"/>
-      <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-      <link rel="stylesheet" href="/main.css"/>
-      <title>Aulas particulares</title>
-   </head>
-   <body>
-      <header>
-         <ul>
-            <li><a href="/">Teachers</a></li>
-            <li><a href="/main/create">Students</a></li>
-         </ul>
-      </header>
-      <main>
-         <div class="card">
-            <section
-               class="avatar"
-               style=" background: url({{teacher.avatar_url}})
-                        no-repeat center center / cover; ">
-            </section>
-            <section class="details">
-               <ul>
-                  <li>
-                     <h1>Professor</h1>
-                     <p>{{teacher.nome}}</p>
-                  </li>
-                  <li>
-                     <h3>Idade</h3>
-                     <p>{{teacher.idade}}</p>
-                  </li>
-                  <li>
-                     <h3>Matéria</h3>
-                     <p>{{teacher.materia}}</p>
-                  </li>
-                  <li>
-                     <h3>Modalidade</h3>
-                     <p>{{teacher.modalidade}}</p>
-                  </li>
-                  <li>
-                     <h3>Grau Escolar</h3>
-                     <p>{{teacher.escolaridade}}</p>
-                  </li>
-                  <li>
-                     <h3>Desde:</h3>
-                     <p>{{teacher.criado_em}}</p>
-                  </li>
-               </ul>
-               <a href="/teachers/{{teacher.id}}/edit" class="button">
-                  Editar
-               </a>
-            </section>
-         </div>
-      </main>
-   </body>
-</html>
+{% extends "layout.njk" %}
+
+{% block content %}
+
+  <div class="card">
+    <section 
+      class="avatar"
+      style="background:url({{teacher.avatar_url}}) no-repeat center center / cover" 
+    >
+
+    </section>
+
+    <section class="details">
+      <h3>Detalhes</h3>
+
+      <div class="item">
+        <div>Instrutor</div>
+        <div>{{teacher.nome}}</div>        
+      </div>
+
+      <div class="item">
+        <div>Idade</div>
+        <div>{{teacher.idade}}</div>
+      </div>
+
+      <div class="item">
+        <div>Graduação</div>
+        <div>{{teacher.graduacao }}</div>
+      </div>
+
+      <div class="item">
+        <div>Acompanhamento</div>
+        <div>
+
+          {% for materias in teacher.materia %}
+          
+            <span>{{ materias }}</span>
+           
+          {% endfor %}
+          
+        </div>
+      </div>
+
+      <div class="item">
+
+        <div>Desde de</div>
+        <div>{{teacher.criado_em}}</div>
+
+      </div>
+
+      <a href="/teachers/{{ teacher.id }}/edit" class="button">Editar</a>
+
+    </section>
+  </div>
+  
+{% endblock content %}

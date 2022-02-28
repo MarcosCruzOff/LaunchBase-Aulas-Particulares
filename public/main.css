@@ -82,12 +82,12 @@ main {
   display: flex;
   /* margin: 0 auto; */
   width: 940px;
+  height: 700px;
   /* border: 1px solid var(--cor-primaria); */
   background-color: var(--cor-branco);
   border-radius: 16px;
   box-shadow: 10px 15px 1px 5px rgba(0, 0, 0, 0.2);
   /* position: absolute; */
-  height: 600px;
 }
 
 .avatar {
@@ -185,7 +185,7 @@ button[type='submit'],
 a.button {
   padding: 8px 32px;
   background-color: var(--cor-primaria);
-  color: var(--cor-branco);
+  color: var(--cor-Texto);
   margin-top: 32px;
   width: 100%;
   font-size: 16px;
@@ -230,4 +230,209 @@ button[type='submit'] {
 #form_delete button[type='submit'] {
   margin-top: 8px;
   background-color: #d30000;
+  color: white;
+}
+/* Estrutra da tabela */
+.tabela-conteiner {
+  display: block;
+  padding: 30px;
+}
+
+/* Determinando o tamanho da tabela */
+table {
+  border-collapse: collapse;
+  max-width: 992px;
+  text-align: left;
+  width: 100%;
+}
+/* Esses elementos se comportam como o 
+correspondente <thead> */
+table thead {
+  display: table-header-group;
+}
+/* Transforma o texto dos títulos  */
+table thead th {
+  padding: 10px;
+  text-transform: uppercase;
+  color: var(--cor-secondaria);
+  font-size: 14px;
+}
+/* Fonte responsiva */
+table tbody {
+  font-size: 0.875em;
+}
+/* Comporta-se como o <tr> */
+table tbody tr {
+  border: none;
+  display: table-row;
+}
+/* table tbody tr:nth-child(odd) {
+  background: #eee;
+} */
+
+/* Comporta-se como o <td>*/
+table tbody tr td {
+  display: table-cell;
+  font-weight: 400;
+  padding: 10px;
+  text-align: left;
+}
+/* Adiciona o espaço dentro da cedula 
+Instrutor para o preenchimento da imagem */
+tbody tr td:first-child {
+  display: grid;
+  grid-template-columns: 64px 1fr;
+  align-items: center;
+}
+/* Adiciona a imagem com formato circular 
+e sombreamento */
+tbody tr td:first-child span {
+  width: 48px;
+  height: 48px;
+  background-position: center;
+  background-size: cover;
+  border-radius: 50%;
+  box-shadow: 3px 1px 6px -4px black;
+  border: 2px solid white;
+}
+/* Estilizar o botão VER dentro da tabela 
+e o botão NOVO */
+tbody tr td:last-child a,
+.tabela-conteiner > a {
+  background-color: var(--cor-primaria);
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 500;
+  padding: 8px 16px;
+  border-radius: 5px;
+  border: none;
+  box-shadow: 0 4px 8px transparentize(#222, 0.8);
+}
+
+/* Aplica o display block no botão NOVO */
+tbody td a {
+  display: block;
+}
+/* Adiciona apenas no botão NOVO 
+um espaçamento em baixo */
+.tabela-conteiner > a {
+  margin-bottom: 10px;
+  display: inline-block;
+}
+
+/* Determinando o comportamento do botão "VER" */
+table tbody tr td a {
+  display: inline-block;
+  padding: 10px 15px;
+  position: initial;
+  -webkit-transform: translate(0);
+  transform: translate(0);
+  width: auto;
+}
+
+/* Ocultando o data-label  */
+table tbody tr td:before {
+  display: none;
+}
+
+/* Alinha ao centro apenas a Coluna AÇÃO */
+thead tr th:last-child,
+td:last-child {
+  text-align: center;
+}
+
+/*  responsividade */
+@media all and (max-width: 768px) {
+  .tabela-conteiner {
+    width: auto;
+  }
+  table {
+    font-weight: 400;
+    min-width: 300px;
+    width: 100%;
+  }
+
+  table thead {
+    display: none;
+    font-weight: 500;
+  }
+
+  table tbody tr {
+    border: 1px solid #dad6eb;
+    border-radius: 5px;
+    display: block;
+    padding: 30px;
+    margin-bottom: 30px;
+  }
+
+  table tbody tr td {
+    display: block;
+    font-weight: 500;
+    padding: 5px;
+    position: relative;
+    text-align: right;
+  }
+
+  table tbody tr td a {
+    -webkit-box-shadow: 0 4px 8px rgba(34, 34, 34, 0.2);
+    box-shadow: 0 4px 8px rgba(34, 34, 34, 0.2);
+    bottom: -30px;
+    left: 50%;
+
+    position: absolute;
+    -webkit-transform: translate(-50%, 50%);
+    transform: translate(-50%, 50%);
+    -webkit-transition: background 0.12s ease-out;
+    transition: background 0.12s ease-out;
+    width: 50%;
+  }
+
+  table tbody tr td a:hover,
+  table tbody tr td a:focus {
+    background: #a795fe;
+    cursor: pointer;
+  }
+
+  table tbody tr td::after {
+    color: #8a8a87;
+    content: attr(data-label);
+    font-weight: 400;
+    left: 5px;
+    position: absolute;
+  }
+
+  /* Alinha uma a imagem em cima do texto
+     dentro da cedula Instrutor para o preenchimento da imagem */
+  tbody tr td:first-child {
+    grid-template-columns: 1fr;
+    font-size: 1.5rem;
+    text-align: center;
+    margin-bottom: 0.5em;
+    border-bottom: 1px solid #777;
+  }
+
+  /* Adiciona a imagem com formato retangular e sombreamento */
+  tbody tr td:first-child span {
+    width: 100%;
+    height: 15vh;
+    border-radius: 0.1px;
+  }
+
+  /* ========= Estilizando a página Show,Edit,Create =========  */
+
+  /* Alterando o comportamento do card */
+  .card {
+    grid-template-columns: 1fr;
+    width: auto;
+  }
+
+  .details {
+    width: 100%;
+  }
+
+  .avatar {
+    width: auto;
+    height: 25vh;
+  }
 }

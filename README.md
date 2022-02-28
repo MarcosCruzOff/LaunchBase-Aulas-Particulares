@@ -69,3 +69,11 @@ No arquivo `teachers.js` adicionado duas novas rotas:
 - `server.put('/teachers', teachers.put);` rota que acessa a função put do arquivo `teacher.js` para atualizar as informações de algum professor cadastrado no arquivo `database.json`
 
 - `server.delete('/teachers', teachers.delete);` rota que acessa a função delete do arquivo `teacher.js` para deletar algum professor cadastrado no arquivo `database.json`
+
+## :rocket: Sobre o desafio: 4-6 <i> Listagem de professores </i>
+
+listagem de todos os professores salvos no arquivo json e apresentá-dos em formato de tabela.
+
+## Mudanças
+
+- Arquivos `.html` foram alterados para trabalhar agora com `.njk`
