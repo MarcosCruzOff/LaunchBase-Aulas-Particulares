@@ -1,7 +1,8 @@
 const express = require('express');
 const nunjucks = require('nunjucks');
 
-const teachers = require('./teachers.js');
+const teachers = require('./controllers/teachers.js');
+const students = require('./controllers/students.js');
 const methodOverride = require('method-override');
 
 const server = express();
@@ -34,6 +35,22 @@ server.get('/teachers/:id/edit', teachers.edit);
 server.put('/teachers', teachers.put);
 
 server.delete('/teachers', teachers.delete);
+
+// ========================Students===================================
+
+server.get('/students', students.index);
+
+server.get('/students/create', students.create);
+
+server.post('/students', students.post);
+
+server.get('/students/:id', students.show);
+
+server.get('/students/:id/edit', students.edit);
+
+server.put('/students', students.put);
+
+server.delete('/students', students.delete);
 
 server.listen(5000, function () {
   console.log('Server on!');

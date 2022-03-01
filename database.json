@@ -10,5 +10,16 @@
       "materia": "física, matematica",
       "criado_em": 1646086821278
     }
+  ],
+  "students": [
+    {
+      "id": 0,
+      "avatar_url": "https://i.pinimg.com/originals/fc/60/ab/fc60ab8c65cad8a7baf4c111658073d5.png",
+      "name": "Lulouch",
+      "email": "marcoscruz673@gmail.com",
+      "birth": 947462400000,
+      "escolaridade": "3° Ano",
+      "hora": "40"
+    }
   ]
 }

@@ -18,6 +18,8 @@ Esse é o primeiro desafio da sequência de criação de um site de aulas partic
 
 É necessário usar o comando <code>npm install express</code>
 
+<br />
+
 ## :rocket: Sobre o desafio: 4-2 <i> Card do Professor </i>
 
 Nessa etapa adicionei uma lib o `browser-sync` e o `npm-run-all` e comecei a criação do card para apresentação das informações do professor.
@@ -70,6 +72,8 @@ No arquivo `teachers.js` adicionado duas novas rotas:
 
 - `server.delete('/teachers', teachers.delete);` rota que acessa a função delete do arquivo `teacher.js` para deletar algum professor cadastrado no arquivo `database.json`
 
+<br />
+
 ## :rocket: Sobre o desafio: 4-6 <i> Listagem de professores </i>
 
 listagem de todos os professores salvos no arquivo json e apresentá-dos em formato de tabela.
@@ -77,3 +81,9 @@ listagem de todos os professores salvos no arquivo json e apresentá-dos em form
 ## Mudanças
 
 - Arquivos `.html` foram alterados para trabalhar agora com `.njk`
+
+<br />
+
+## :rocket: Sobre o desafio: 4-7 <i> Estruturando estudantes </i>
+
+reaproveitando todos os códigos ja criados dos professores para os estudantes toda a estrutura já criada para os professores. e implementando a lógia de menu ativado

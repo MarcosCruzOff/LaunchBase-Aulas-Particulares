@@ -1,3 +1,14 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+/* variaveis padrão */
+:root {
+  --color-main: #141412;
+  --color-main2: #151515;
+  --color-secondary: #f3a636;
+  --color-text-white: #fff;
+  --color-text-black: #333;
+}
+
 /* resetando as propriedades do navegador */
 * {
   margin: 0;
@@ -10,154 +21,117 @@
   outline: none;
 }
 
-:root {
-  --cor-primaria: #15e696;
-  --cor-secondaria: #5b5b5b;
-  --cor-secondaria2: #111;
-  --cor-branco: #ffff;
-  --cor-gol: #fd951f;
-  --cor-Ativado: #50fa7b;
-  --cor-Texto: #333;
-}
-
 /* corpo do site */
 body {
   font-family: 'Roboto', sans-serif;
-  background-color: var(--cor-secondaria);
+  background-color: var(--color-main);
 }
 
+/* Menu */
 header {
-  width: 100vw;
-  /* border: 1px solid black; */
-  margin-bottom: 15px;
-  background: var(--cor-secondaria2);
+  background-color: var(--color-main2);
+  width: 100%;
+  padding: 32px;
+  text-align: center;
 }
 
-header ul {
-  display: flex;
-  justify-content: center;
-  height: 80px;
+/* ============= Links ============= */
+.links li {
+  display: inline;
+  margin: 0 15px;
 }
 
-header ul li {
-  padding: 20px;
-  margin: auto 5px;
-}
-
-header ul li a {
-  color: var(--cor-branco);
-  font-weight: 600;
-  text-transform: capitalize;
-  font-size: 20px;
+.links a {
+  font-size: 22px;
+  color: var(--color-text-white);
   position: relative;
 }
 
-header ul li a:hover {
-  color: var(--cor-primaria);
+.links a:hover {
+  color: var(--color-secondary);
 }
 
-header ul li a::after {
+.links a::after {
   content: '';
-  width: 0px;
-  height: 5px;
-  background-color: var(--cor-gol);
+  width: 0;
+  height: 2px;
+  background-color: var(--color-secondary);
   position: absolute;
   left: 0;
-  bottom: -10px;
+  bottom: -4px;
 }
 
-header ul li a:hover::after {
+.links a:hover::after {
   width: 100%;
   -webkit-transition: width 200ms ease-in-out;
   transition: width 200ms ease-in-out;
 }
 
-main {
-  width: 940px;
-  height: auto;
-  margin: 0 auto;
+/* Link Ativado */
+.links .active {
+  color: var(--color-secondary);
+  font-weight: bold;
 }
 
+/* ============= card ============= */
 .card {
-  display: flex;
-  /* margin: 0 auto; */
-  width: 940px;
-  height: 700px;
-  /* border: 1px solid var(--cor-primaria); */
-  background-color: var(--cor-branco);
+  background-color: var(--color-text-white);
   border-radius: 16px;
-  box-shadow: 10px 15px 1px 5px rgba(0, 0, 0, 0.2);
-  /* position: absolute; */
+  width: 800px;
+  min-height: 500px;
+  margin: 45px auto;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+  -webkit-box-shadow: 0px 2px 6px -2px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 2px 6px -2px rgba(0, 0, 0, 0.2);
+  /* Animar a tela */
+  -webkit-animation: up 200ms ease-in-out;
+  animation: up 200ms ease-in-out;
+}
+
+@-webkit-keyframes up {
+  from {
+    opacity: 0;
+    -webkit-transform: translateY(15px);
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes up {
+  from {
+    opacity: 0;
+    -webkit-transform: translateY(15px);
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 .avatar {
   border-radius: 16px 0 0 16px;
-  width: 40%;
-  animation-name: boximg;
-  animation-duration: 1000ms;
-  animation-delay: 900ms;
-  animation-timing-function: ease-in;
 }
-
-@keyframes boximg {
-  0% {
-    height: 1px;
-  }
-
-  100% {
-    height: 600px;
-  }
-}
-
 .details {
-  width: 60%;
-  padding: 15px;
-  /* margin: auto 0; */
+  padding: 32px;
 }
 
-.details h3,
-.details h1 {
-  text-transform: uppercase;
-  font-weight: bold;
-  margin-bottom: 3px;
-  color: var(--cor-gol);
-}
-
-.details p {
-  color: var(--cor-secondaria);
-  font-weight: 500;
-}
-
-.title h4::after {
-  content: '';
-  width: 510px;
-  height: 8px;
-  left: 0;
-  bottom: -15px;
-  position: absolute;
-  background-color: aliceblue;
-}
-
-.details ul li {
-  padding: 20px 0 20px 0;
-  border-bottom: 2px solid #3333;
-}
-.details ul li:last-child {
-  border-bottom: none;
-}
-
-/* ============= Formulário ============= */
 .details .item {
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   padding: 16px 0;
 }
 
-/* .details .item:last-child {
-   border-bottom: none;
-} */
+.details .item:last-child {
+  border: none;
+}
 
+.details h3,
 .details .item div:nth-child(1) {
-  color: var(--cor-gol);
+  color: #777;
   font-size: 14px;
   line-height: 24px;
   letter-spacing: 0.7px;
@@ -169,11 +143,17 @@ main {
   font-size: 18px;
 }
 
+.details h3 {
+  text-transform: uppercase;
+  font-weight: bold;
+  color: var(--color-secondary);
+}
+
 .details .item span {
   padding: 8px 16px;
-  background-color: var(--cor-gol);
+  background-color: var(--color-main2);
   border-radius: 16px;
-  color: white;
+  color: var(--color-text-white);
   margin-right: 4px;
   margin-top: 8px;
   display: inline-block;
@@ -184,13 +164,11 @@ main {
 button[type='submit'],
 a.button {
   padding: 8px 32px;
-  background-color: var(--cor-primaria);
-  color: var(--cor-Texto);
+  background-color: var(--color-secondary);
+  color: var(--color-text-white);
   margin-top: 32px;
   width: 100%;
   font-size: 16px;
-  text-transform: uppercase;
-  font-weight: 600;
 }
 
 a.button {
@@ -211,6 +189,21 @@ input[type='radio'] {
   margin-right: 4px;
 }
 
+input::-webkit-input-placeholder {
+  font-size: 16px;
+  font-weight: normal;
+}
+
+input:-ms-input-placeholder {
+  font-size: 16px;
+  font-weight: normal;
+}
+
+input::-ms-input-placeholder {
+  font-size: 16px;
+  font-weight: normal;
+}
+
 input::placeholder {
   font-size: 16px;
   font-weight: normal;
@@ -218,26 +211,25 @@ input::placeholder {
 
 button[type='submit'] {
   padding: 8px 32px;
-  background-color: var(--cor-primaria);
+  background-color: var(--color-secondary);
   border-radius: 4px;
   margin-top: 16px;
   width: 100%;
-  color: var(--cor-Texto);
+  color: var(--color-text-white);
   font-size: 16px;
-  font-weight: 600;
 }
 
+/* ============= Formulário ============= */
 #form_delete button[type='submit'] {
   margin-top: 8px;
   background-color: #d30000;
-  color: white;
 }
+
 /* Estrutra da tabela */
 .tabela-conteiner {
   display: block;
   padding: 30px;
 }
-
 /* Determinando o tamanho da tabela */
 table {
   border-collapse: collapse;
@@ -245,30 +237,30 @@ table {
   text-align: left;
   width: 100%;
 }
+
 /* Esses elementos se comportam como o 
 correspondente <thead> */
 table thead {
   display: table-header-group;
 }
+
 /* Transforma o texto dos títulos  */
 table thead th {
   padding: 10px;
   text-transform: uppercase;
-  color: var(--cor-secondaria);
   font-size: 14px;
 }
+
 /* Fonte responsiva */
 table tbody {
   font-size: 0.875em;
 }
+
 /* Comporta-se como o <tr> */
 table tbody tr {
   border: none;
   display: table-row;
 }
-/* table tbody tr:nth-child(odd) {
-  background: #eee;
-} */
 
 /* Comporta-se como o <td>*/
 table tbody tr td {
@@ -277,6 +269,7 @@ table tbody tr td {
   padding: 10px;
   text-align: left;
 }
+
 /* Adiciona o espaço dentro da cedula 
 Instrutor para o preenchimento da imagem */
 tbody tr td:first-child {
@@ -284,6 +277,7 @@ tbody tr td:first-child {
   grid-template-columns: 64px 1fr;
   align-items: center;
 }
+
 /* Adiciona a imagem com formato circular 
 e sombreamento */
 tbody tr td:first-child span {
@@ -295,11 +289,12 @@ tbody tr td:first-child span {
   box-shadow: 3px 1px 6px -4px black;
   border: 2px solid white;
 }
+
 /* Estilizar o botão VER dentro da tabela 
 e o botão NOVO */
 tbody tr td:last-child a,
 .tabela-conteiner > a {
-  background-color: var(--cor-primaria);
+  background-color: var(--color-secondary);
   color: #fff;
   text-transform: uppercase;
   font-size: 12px;
@@ -314,6 +309,7 @@ tbody tr td:last-child a,
 tbody td a {
   display: block;
 }
+
 /* Adiciona apenas no botão NOVO 
 um espaçamento em baixo */
 .tabela-conteiner > a {
@@ -388,12 +384,6 @@ td:last-child {
     width: 50%;
   }
 
-  table tbody tr td a:hover,
-  table tbody tr td a:focus {
-    background: #a795fe;
-    cursor: pointer;
-  }
-
   table tbody tr td::after {
     color: #8a8a87;
     content: attr(data-label);
@@ -436,3 +426,4 @@ td:last-child {
     height: 25vh;
   }
 }
+/*# sourceMappingURL=style.css.map */

@@ -1,6 +1,6 @@
 const fs = require('fs');
-const database = require('./database.json');
-const { age, date } = require('./utils');
+const database = require('../database.json');
+const { age, date } = require('../utils');
 
 exports.index = function (req, res) {
   return res.render('teachers/index', { teachers: database.teachers });
