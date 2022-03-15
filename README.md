@@ -87,3 +87,22 @@ listagem de todos os professores salvos no arquivo json e apresentá-dos em form
 ## :rocket: Sobre o desafio: 4-7 <i> Estruturando estudantes </i>
 
 reaproveitando todos os códigos ja criados dos professores para os estudantes toda a estrutura já criada para os professores. e implementando a lógia de menu ativado
+
+<br/>
+
+## :rocket: Sobre o desafio: 5-1 <i> Refatorando aplicação e configurando o BD </i>
+
+### Criando Banco de dados
+
+Utilizando a ferramenta BeekeperStudio, para a visualização gráfica, para criar **tabelas e queries** em um banco de dados chamado **my_teacher**.
+Podendo assim deixar salvos os dados do clientes tanto em um aquivo `json` e no **banco de dados**
+
+### Refatorando o Código
+
+Após o banco de dados criado, foi preciso refatorar a aplicação para utilizá-lo.Seguintes alterações realizadas:
+
+- Nova estrutura de pastas (src, app e lib);
+
+### Configurando BD na aplicação
+
+Por fim, biblioteca `pg` instalada. Um arquivo de configuração do banco de dados foi criado (em uma pasta **config**) utilizando o objeto `Pool`.

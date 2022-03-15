@@ -1,80 +1,71 @@
 <div class="item">
   <div>Avatar URL</div>
-
   <div>
     <input 
       type="url" 
-      name="avatar_url" id="" 
+      name="avatar_url"
       placeholder="https://"
       value="{{ teacher.avatar_url }}">
   </div>
-
 </div>
 
 <div class="item">
   <div>Professor</div>
-
   <div>
     <input 
       type="text" 
-      name="nome" id="" 
+      name="name" 
       placeholder="Nome do Professor"
-      value="{{ teacher.nome }}">
+      value="{{ teacher.name }}">
   </div>
-
 </div>
 
 
 <div class="item">
   <div>Data de Nascimento</div>
-
   <div>
     <input 
       type="date" 
-      name="idade" 
-      value="{{ teacher.idade }}">
+      name="birth" 
+      value="{{ teacher.birth }}">
   </div>
-
 </div>
 
 <div class="item">
   <div>Graduação</div>
-
   <div>
-     <select name="graduacao">
-         <option value="Superior" {% if teacher.graduacao=="Superior" %} selected {% endif %}>
+     <select name="education">
+         <option value="Superior" {% if teacher.education=="Superior" %} selected {% endif %}>
             Superior
          </option>
 
-         <option value="Pós-graduação" {% if teacher.graduacao=="Pós-graduação" %} selected {% endif %}>
+         <option value="Pós-graduação" {% if teacher.education=="Pós-graduação" %} selected {% endif %}>
             Pós-graduação
          </option>
 
-         <option value="Mestrado" {% if teacher.graduacao=="Mestrado" %} selected {% endif %}>
+         <option value="Mestrado" {% if teacher.education=="Mestrado" %} selected {% endif %}>
             Mestrado
          </option>
 
-         <option value="Especialista" {% if teacher.graduacao=="Especialista" %} selected {% endif %}>
+         <option value="Especialista" {% if teacher.education=="Especialista" %} selected {% endif %}>
             Especialista
          </option>
 
-         <option value="Doutorado" {% if teacher.graduacao=="Doutorado" %} selected {% endif %}>
+         <option value="Doutorado" {% if teacher.education=="Doutorado" %} selected {% endif %}>
             Doutorado
          </option>
       </select>
   </div>
-
 </div>
 
 <div class="item">
   <div>Area de Atuação</div>
-
   <div>
     <input 
     type="text" 
-    name="materia" 
+    name="class_type" 
     placeholder="Separe o Serviço por virgula"
-    value="{{ teacher.materia }}">
+    value="{{ teacher.class_type }}">
   </div>
 </div>
 

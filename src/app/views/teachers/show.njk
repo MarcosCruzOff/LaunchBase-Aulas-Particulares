@@ -14,38 +14,34 @@
       <h3>Detalhes</h3>
 
       <div class="item">
-        <div>Instrutor</div>
-        <div>{{teacher.nome}}</div>        
+        <div>Professor</div>
+        <div>{{teacher.name}}</div>        
       </div>
 
       <div class="item">
         <div>Idade</div>
-        <div>{{teacher.idade}}</div>
+        <div>{{teacher.birth}}</div>
       </div>
 
       <div class="item">
         <div>Graduação</div>
-        <div>{{teacher.graduacao }}</div>
+        <div>{{teacher.education }}</div>
       </div>
 
       <div class="item">
         <div>Acompanhamento</div>
         <div>
-
-          {% for materias in teacher.materia %}
+          {% for subjects in teacher.subjects_taught %}
           
-            <span>{{ materias }}</span>
+            <span>{{ subjects }}</span>
            
-          {% endfor %}
-          
+          {% endfor %}          
         </div>
       </div>
 
       <div class="item">
-
         <div>Desde de</div>
-        <div>{{teacher.criado_em}}</div>
-
+        <div>{{teacher.created_at}}</div>
       </div>
 
       <a href="/teachers/{{ teacher.id }}/edit" class="button">Editar</a>
