@@ -20,22 +20,27 @@
 
       <div class="item">
         <div>Idade</div>
-        <div>{{teacher.birth}}</div>
+        <div>{{teacher.age}}</div>
       </div>
 
       <div class="item">
         <div>Graduação</div>
-        <div>{{teacher.education }}</div>
+        <div>{{teacher.education_level }}</div>
       </div>
 
       <div class="item">
-        <div>Acompanhamento</div>
-        <div>
-          {% for subjects in teacher.subjects_taught %}
+        <div>Graduação</div>
+        <div>          
           
-            <span>{{ subjects }}</span>
-           
-          {% endfor %}          
+          <span>{{ teacher.subjects_taught }}</span>           
+                
+        </div>
+      </div>
+
+         <div class="item">
+        <div>Matérias</div>
+        <div>
+           {{ teacher.class_type }}        
         </div>
       </div>
 
