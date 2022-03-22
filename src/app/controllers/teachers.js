@@ -44,7 +44,15 @@ module.exports = {
 
   //Exporta a função que edita os dados do usuários
   edit(req, res) {
-    return
+    Teacher.find(req.params.id, function (teacher) {
+      if (!teacher) return res.send('Techer not Found')
+
+      teacher.birth_date = date(teacher.birth_date).iso
+
+      // teacher.created_at = date(teacher.created_at).format
+
+      return res.render('teachers/edit', { teacher })
+    })
   },
 
   //Exporta a função que atualizar dados dos usuários
