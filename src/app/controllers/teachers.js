@@ -65,7 +65,9 @@ module.exports = {
         return res.send('Por favor, Preencha todos os campos')
     }
 
-    return
+    Teacher.update(req.body, function () {
+      return res.redirect(`/teachers/${req.body.id}`)
+    })
   },
 
   //Delete

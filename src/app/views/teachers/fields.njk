@@ -35,23 +35,23 @@
   <div>Graduação</div>
   <div>
      <select name="education_level">
-         <option value="Superior" {% if teacher.education_level=="Superior" %} selected {% endif %}>
+         <option type="text" value="Superior" {% if teacher.education_level=="Superior" %} selected {% endif %}>
             Superior
          </option>
 
-         <option value="Pós-graduação" {% if teacher.education_level=="Pós-graduação" %} selected {% endif %}>
+         <option type="text" value="Pós-graduação" {% if teacher.education_level=="Pós-graduação" %} selected {% endif %}>
             Pós-graduação
          </option>
 
-         <option value="Mestrado" {% if teacher.education_level=="Mestrado" %} selected {% endif %}>
+         <option type="text" value="Mestrado" {% if teacher.education_level=="Mestrado" %} selected {% endif %}>
             Mestrado
          </option>
 
-         <option value="Especialista" {% if teacher.education_level=="Especialista" %} selected {% endif %}>
+         <option type="text" value="Especialista" {% if teacher.education_level=="Especialista" %} selected {% endif %}>
             Especialista
          </option>
 
-         <option value="Doutorado" {% if teacher.education_level=="Doutorado" %} selected {% endif %}>
+         <option type="text" value="Doutorado" {% if teacher.education_level=="Doutorado" %} selected {% endif %}>
             Doutorado
          </option>
       </select>
@@ -73,15 +73,15 @@
   <div>Modalidade</div>
   <div>
      <select name="subjects_taught">
-         <option value="Presencial" {% if teacher.subjects_taught=="Presencial" %} selected {% endif %}>
+         <option type="text" value="Presencial" {% if teacher.subjects_taught=="Presencial" %} selected {% endif %}>
             Presencial
          </option>
 
-         <option value="Semi-Presencial" {% if teacher.subjects_taught=="Semi-Presencial" %} selected {% endif %}>
+         <option type="text" value="Semi-Presencial" {% if teacher.subjects_taught=="Semi-Presencial" %} selected {% endif %}>
             Semi-Presencial
          </option>
 
-         <option value="Ead" {% if teacher.subjects_taught=="EaD" %} selected {% endif %}>
+         <option type="text" value="Ead" {% if teacher.subjects_taught=="EaD" %} selected {% endif %}>
             EaD
          </option>
       </select>
