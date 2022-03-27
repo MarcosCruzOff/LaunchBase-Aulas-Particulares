@@ -14,28 +14,33 @@
       <h3>Detalhes</h3>
 
       <div class="item">
-        <div>Membro</div>
+        <div>Aluno</div>
         <div>{{student.name}}</div>        
       </div>
 
       <div class="item">
         <div>Email</div>
-        <div>{{student.email}}</div>        
+        <div>{{student.email_student}}</div>        
       </div>
 
       <div class="item">
         <div>Idade</div>
-        <div>{{student.birth}}</div>
+        <div>{{student.age}}</div>
       </div>
 
       <div class="item">
         <div>Ano Letivo</div>
-        <div>{{student.escolaridade}}</div>
+        <div>{{student.education_level}}</div>
       </div>
 
       <div class="item">
-        <div>Carga horaria</div>
-        <div>{{student.hora}}</div>        
+        <div>Matérias</div>
+        <div>{{student.class_type}}</div>        
+      </div>
+
+      <div class="item">
+        <div>Modalidade</div>
+        <div>{{student.subjects_taught}}</div>        
       </div>
 
       <a href="/students/{{ student.id }}/edit" class="button">Editar</a>

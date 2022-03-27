@@ -4,33 +4,37 @@ const db = require('../../config/db')
 const { date } = require('../../lib/utils')
 
 module.exports = {
-  //Seleciona todos os professores, e conta quantos alunos cada instrutor tem
+  //Seleciona todos os estudantes, e conta quantos alunos cada instrutor tem
   all(callback) {
-    db.query(`SELECT * FROM teachers`, function (err, results) {
+    db.query(`SELECT * FROM students`, function (err, results) {
       if (err) throw `Database Error! ${err}`
 
       callback(results.rows)
     })
   },
 
-  //Função que inseri as informações para novos professores no banco de dados
+  //Função que inseri as informações para novos estudantes no banco de dados
   create(data, callback) {
     const query = `
-      INSERT INTO teachers(
+      INSERT INTO students(
          avatar_url, 
          name, 
-         birth_date, 
+         birth_date,
+         email_student,
+         phone,
          education_level, 
          class_type, 
          subjects_taught,
          created_at
-      ) VALUES($1, $2, $3, $4, $5, $6, $7)
+      ) VALUES($1, $2, $3, $4, $5, $6, $7, $8, $9)
       RETURNING id
       `
     const values = [
       data.avatar_url,
       data.name,
       date(data.birth_date).iso,
+      data.email_student,
+      data.phone,
       data.education_level,
       data.class_type,
       data.subjects_taught,
@@ -45,10 +49,10 @@ module.exports = {
     })
   },
 
-  //Função que faz o filtro dos professores pelo nome
+  //Função que faz o filtro dos estudantes pelo nome
   find(id, callback) {
     db.query(
-      `SELECT * FROM teachers WHERE id = $1`,
+      `SELECT * FROM students WHERE id = $1`,
       [id],
       function (err, results) {
         if (err) throw `Database Error! ${err}`
@@ -58,22 +62,26 @@ module.exports = {
     )
   },
 
-  //Função que faz o filtro dos professores pelo nome
+  //Função que faz o filtro dos estudantes pelo nome
   update(data, callback) {
     const query = `
-    UPDATE teachers SET
+    UPDATE students SET
       avatar_url  =($1),
       name  =($2),
       birth_date  =($3),
-      education_level =($4),
-      class_type  =($5),
-      subjects_taught =($6)
-    WHERE id = $7    
+      email_student  =($4),
+      phone  =($5),
+      education_level =($6),
+      class_type  =($7),
+      subjects_taught =($8)
+    WHERE id = $9    
     `
     const values = [
       data.avatar_url,
       data.name,
       date(data.birth_date).iso,
+      data.email_student,
+      data.phone,
       data.education_level,
       data.class_type,
       data.subjects_taught,
@@ -87,10 +95,10 @@ module.exports = {
     })
   },
 
-  //Função que faz o filtro dos professores pelo nome
+  //Função que faz o filtro dos estudantes pelo nome
   delete(id, callback) {
     db.query(
-      `DELETE FROM teachers WHERE id = $1`,
+      `DELETE FROM students WHERE id = $1`,
       [id],
       function (err, results) {
         if (err) throw `Database Error! ${err}`

@@ -15,8 +15,8 @@
       <tr>        
         <th>Aluno</th>
         <th>Email</th>
-        <th>Ano</th>
-        <th>Hora</th>
+        <th>Celular</th>
+        <th>Série</th>
         <th>Ação</th>
       </tr>
     </thead>
@@ -31,9 +31,10 @@
            
             {{student.name}}
           </td>
-          <td data-label="EMAIL">{{student.email}}</td>
-          <td data-label="ANO">{{student.escolaridade}}</td>
-          <td data-label="HORAS">{{student.hora}}</td>
+          <td data-label="EMAIL">{{student.email_student}}</td>
+          <td data-label="CELULAR">{{student.phone}}</td>
+          <td data-label="SÉRIE">{{student.education_level}}</td>
+          
           
           <td><a href="/students/{{student.id}}">ver</a></td>
         </tr>

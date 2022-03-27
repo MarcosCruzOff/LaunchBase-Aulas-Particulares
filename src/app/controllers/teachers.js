@@ -1,5 +1,6 @@
 const Teacher = require('../models/Teacher')
 const { date, age } = require('../../lib/utils')
+const db = require('../../config/db')
 
 module.exports = {
   //Exporta a função que mostra a página index
@@ -72,6 +73,8 @@ module.exports = {
 
   //Delete
   delete(req, res) {
-    return
+    Teacher.delete(req.body.id, function () {
+      return res.redirect(`/teachers`)
+    })
   },
 }

@@ -27,6 +27,20 @@
 
 </div>
 
+<!--DATA DE NASCIMENTO-->
+<div class="item">
+  <div>Data de Nascimento</div>
+
+  <div>
+    <input 
+      type="date" 
+      name="birth_date" 
+      value="{{ student.birth_date }}"
+    >
+  </div>
+
+</div>
+
 <!--EMAIL ALUNO-->
 <div class="item">
   <div>Email</div>
@@ -34,103 +48,117 @@
   <div>
     <input 
       type="email" 
-      name="email" id="" 
+      name="email_student" id="" 
       placeholder="exemplo@exemplo.com"
-      value="{{ student.email }}"
+      value="{{ student.email_student }}"
     >
   </div>
 
 </div>
 
-
-
+<!--CELULAR CONTATO-->
 <div class="item">
-  <div>Data de Nascimento</div>
+  <div>Celular</div>
 
   <div>
     <input 
-      type="date" 
-      name="birth" 
-      value="{{ student.birth }}"
+      type="text" 
+      name="phone"  
+      value="{{ student.phone }}"
     >
   </div>
 
 </div>
 
-
+<!--GRADUAÇÃO NIVEL-->
 <div class="item">
-  <div>Escolaridade</div>
+  <div>Ano letivo</div>
 
   <div>
-
-    <select name="escolaridade">
+    <select name="education_level">
       <option value="5° Série" 
-        {% if student.escolaridade == "5° Série" %}
+        {% if student.education_level == "5° Série" %}
           selected
         {% endif %}>5° Série
       </option>
 
       <option value="6° Série" 
-        {% if student.escolaridade == "6° Série" %}
+        {% if student.education_level == "6° Série" %}
           selected
         {% endif %}>6° Série
       </option>
 
       <option value="7° Série" 
-        {% if student.escolaridade == "7° Série" %}
+        {% if student.education_level == "7° Série" %}
           selected
         {% endif %}>7° Série
       </option>
 
       <option value="8° Série" 
-        {% if student.escolaridade == "8° Série" %}
+        {% if student.education_level == "8° Série" %}
           selected
         {% endif %}>5° Série
       </option>
 
       <option value="9° Série" 
-        {% if student.escolaridade == "9° Série" %}
+        {% if student.education_level == "9° Série" %}
           selected
         {% endif %}>9° Série
       </option>
 
       <option value="1° Ano" 
-        {% if student.escolaridade == "1° Ano" %}
+        {% if student.education_level == "1° Ano" %}
           selected
         {% endif %}>1° Ano
       </option>
 
       <option value="2° Ano" 
-        {% if student.escolaridade == "2° Ano" %}
+        {% if student.education_level == "2° Ano" %}
           selected
         {% endif %}>2° Ano
       </option>
 
       <option value="3° Ano" 
-        {% if student.escolaridade == "3° Ano" %}
+        {% if student.education_level == "3° Ano" %}
           selected
         {% endif %}>3° Ano
       </option>
 
     </select>
-
   </div>
 
 </div>
 
-
+<!--MATÉRIA-->
 <div class="item">
-  <div>Carga Horaria</div>
-
+  <div>Area de Atuação</div>
   <div>
     <input 
-      type="number" 
-      name="hora"  
-      value="{{ student.hora }}"
-    >
+    type="text" 
+    name="class_type" 
+    placeholder="Separe as matérias por vírgula"
+    value="{{ teacher.class_type }}">
   </div>
-
 </div>
 
+<!--MODALIDADE-->
+<div class="item">
+  <div>Modalidade</div>
+  <div>
+     <select name="subjects_taught">
+         <option type="text" value="Presencial" {% if teacher.subjects_taught=="Presencial" %} selected {% endif %}>
+            Presencial
+         </option>
+
+         <option type="text" value="Semi-Presencial" {% if teacher.subjects_taught=="Semi-Presencial" %} selected {% endif %}>
+            Semi-Presencial
+         </option>
+
+         <option type="text" value="Ead" {% if teacher.subjects_taught=="EaD" %} selected {% endif %}>
+            EaD
+         </option>
+      </select>
+  </div>
+</div>
 
 <button type="submit">Salvar</button>
