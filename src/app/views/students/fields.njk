@@ -137,8 +137,29 @@
     type="text" 
     name="class_type" 
     placeholder="Separe as matérias por vírgula"
-    value="{{ teacher.class_type }}">
+    value="{{ student.class_type }}">
   </div>
+</div>
+
+<!--PROFESSOR PARA O ALUNO-->
+<div class="item">
+  <div>Professores</div>
+
+  
+
+    <select name="teacher">
+
+      {% for teacher in teachersOptions %}
+          <option value="{{teacher.id}}" 
+            {% if students.teacher_id == teacher.id %}
+              selected
+            {%endif%}>
+              {{teacher.name}}
+          </option>
+      {% endfor %}      
+
+    </select> 
+
 </div>
 
 <!--MODALIDADE-->

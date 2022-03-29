@@ -6,11 +6,20 @@ const { date } = require('../../lib/utils')
 module.exports = {
   //Seleciona todos os professores, e conta quantos alunos cada instrutor tem
   all(callback) {
-    db.query(`SELECT * FROM teachers`, function (err, results) {
-      if (err) throw `Database Error! ${err}`
+    db.query(
+      `
+        SELECT teachers.*, count(students) AS total_students
+        FROM teachers
+        LEFT JOIN students ON (students.teacher_id = teachers.id)
+        GROUP BY teachers.id
+      `,
 
-      callback(results.rows)
-    })
+      function (err, results) {
+        if (err) throw `Database Error! ${err}`
+
+        callback(results.rows)
+      }
+    )
   },
 
   //Função que inseri as informações para novos professores no banco de dados
@@ -58,15 +67,35 @@ module.exports = {
     )
   },
 
+  //Função que faz o filtro dos teachers pelo nome
+  findBy(filter, callback) {
+    db.query(
+      `
+      SELECT teachers.*, count(students) AS total_students
+      FROM teachers
+      LEFT JOIN students ON (students.teacher_id = teachers.id)
+      WHERE teachers.name ILIKE '%${filter}%'
+      OR teachers.class_types ILIKE '%${filter}%'
+      GROUP BY teachers.id
+      `,
+
+      function (err, results) {
+        if (err) throw `Database Error! ${err}`
+
+        callback(results.rows)
+      }
+    )
+  },
+
   //Função que faz o filtro dos professores pelo nome
   update(data, callback) {
     const query = `
     UPDATE teachers SET
-      avatar_url  =($1),
-      name  =($2),
-      birth_date  =($3),
+      avatar_url      =($1),
+      name            =($2),
+      birth_date      =($3),
       education_level =($4),
-      class_type  =($5),
+      class_type      =($5),
       subjects_taught =($6)
     WHERE id = $7    
     `
@@ -98,5 +127,40 @@ module.exports = {
         return callback()
       }
     )
+  },
+
+  //Função que faz a paginação
+  paginate(params) {
+    const { filter, limit, offset, callback } = params
+
+    let query = '',
+      filterQuery = '',
+      totalQuery = `(
+          SELECT count (*) FROM teachers
+        ) AS total`
+
+    if (filter) {
+      filterQuery = `
+        WHERE teachers.name ILIKE '%${filter}%'
+        OR teachers.class_types ILIKE '%${filter}%'
+      `
+      totalQuery = `(
+        SELECT count (*) FROM teachers
+        ${filterQuery}
+      ) AS total`
+    }
+
+    query = `
+      SELECT teachers.*, ${totalQuery}, count(students) AS total_students
+      FROM teachers
+      LEFT JOIN students ON (teachers.id = students.teacher_id)
+      ${filterQuery}
+      GROUP BY teachers.id LIMIT $1 OFFSET $2
+    `
+    db.query(query, [limit, offset], function (err, results) {
+      if (err) throw `Database Error! ${err}`
+
+      callback(results.rows)
+    })
   },
 }
