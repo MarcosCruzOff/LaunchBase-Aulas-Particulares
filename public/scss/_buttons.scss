@@ -1,0 +1,39 @@
+// todos os botões
+button[type='submit'],
+a.button {
+  padding: 8px 20px;
+  background-color: var(--color-secondary);
+  border-radius: 4px;
+  color: var(--color-text-white);
+  margin-top: 32px;
+  width: 100%;
+  font-size: 16px;
+}
+
+a.button {
+  display: block;
+  text-align: center;
+}
+
+/* botão DELETE */
+#form_delete button[type='submit'] {
+  margin-top: 8px;
+  background-color: var(--color-btn-delete);
+}
+
+input {
+  width: 100%;
+  color: var(--color-text-grayStrong);
+  font-weight: 700;
+  font-size: 18px;
+}
+
+input::placeholder {
+  font-size: 16px;
+  font-weight: normal;
+}
+
+input[type='radio'] {
+  width: initial;
+  margin-right: 4px;
+}
