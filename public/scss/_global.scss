@@ -152,6 +152,7 @@ header {
     max-width: 890px;
     text-align: left;
     width: 100%;
+    margin-bottom: 50px;
 
     thead {
       display: table-header-group;
@@ -265,6 +266,28 @@ header {
 
       button {
         margin: 0;
+      }
+    }
+  }
+}
+
+.table-container {
+  display: grid;
+  grid-template: 67px 1fr 16px / 1fr;
+
+  .pagination {
+    align-self: end;
+    justify-self: center;
+
+    a,
+    span {
+      color: var(--color-secondary);
+      text-decoration: none;
+      margin-right: 12px;
+
+      &:hover {
+        filter: brightness(0.3);
+        border-bottom: 1px solid var(--color-main2);
       }
     }
   }

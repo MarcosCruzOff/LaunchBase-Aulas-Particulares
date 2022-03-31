@@ -1,6 +1,6 @@
 const db = require('../../config/db')
 
-//Mostra quantos anos o professor tem
+//Mostra quantos anos o aluno tem
 const { date } = require('../../lib/utils')
 
 module.exports = {
@@ -18,7 +18,7 @@ module.exports = {
     const query = `
       INSERT INTO students(
          avatar_url, 
-         name, 
+         name_student, 
          birth_date,
          email_student,
          phone,
@@ -28,20 +28,19 @@ module.exports = {
          created_at,
          teacher_id
       ) VALUES($1, $2, $3, $4, $5, $6, $7, $8, $9, $10)
-      RETURNING ID
+      RETURNING id
       `
     const values = [
       data.avatar_url,
-      data.name,
+      data.name_student,
       date(data.birth_date).iso,
       data.email_student,
       data.phone,
       data.education_level,
       data.class_type,
       data.subjects_taught,
-      data.created_at,
-      data.teacher,
       date(Date.now()).iso,
+      data.teacher,
     ]
 
     //Envia as informações para o banco de dados caso não aja erro
