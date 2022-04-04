@@ -16,16 +16,28 @@ module.exports = {
       limit,
       offset,
       callback(students) {
-        const pagination = {
-          total: Math.ceil(students[0].total / limit),
-          page,
+        // const pagination = {
+        //   total: Math.ceil(students[0].total / limit),
+        //   page,
+        // }
+        // return res.render('students/index', {
+        //   students,
+        //   pagination,
+        //   filter,
+        // })
+        if (students[0]) {
+          const pagination = {
+            total: Math.ceil(students[0].total / limit),
+            page,
+          }
+          return res.render('students/index', {
+            students,
+            pagination,
+            filter,
+          })
+        } else {
+          return res.render(`students/index`)
         }
-
-        return res.render('students/index', {
-          students,
-          pagination,
-          filter,
-        })
       },
     }
 

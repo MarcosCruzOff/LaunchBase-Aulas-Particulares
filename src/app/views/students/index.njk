@@ -38,9 +38,7 @@
       <!--CORPO DA TABELA-->
       <tbody>
         {% for student in students %}
-
-          <tr>
-            
+          <tr>            
             <td>
               <span style="background-image:url({{student.avatar_url}})"></span>
             
@@ -51,9 +49,7 @@
             <td data-label="SÉRIE">{{student.education_level}}</td>
             <td><a href="/students/{{student.id}}">ver</a></td>
           </tr>
-
         {% endfor %}
-
       </tbody>
     </table>
 

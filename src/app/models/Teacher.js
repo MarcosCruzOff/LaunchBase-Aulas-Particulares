@@ -142,7 +142,7 @@ module.exports = {
     if (filter) {
       filterQuery = `
         WHERE teachers.name ILIKE '%${filter}%'
-        OR teachers.class_types ILIKE '%${filter}%'
+        OR teachers.class_type ILIKE '%${filter}%'
       `
       totalQuery = `(
         SELECT count (*) FROM teachers
