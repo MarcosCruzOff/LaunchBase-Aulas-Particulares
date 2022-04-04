@@ -33,9 +33,7 @@
       <!--CORPO DA TABELA-->
       <tbody>
         {% for teacher in teachers %}
-
-          <tr>
-            
+          <tr>            
             <td>
               <span style="background-image:url({{teacher.avatar_url}})"></span>
               {{teacher.name}}
@@ -43,12 +41,10 @@
 
             <td data-label="Matérias"> {{teacher.class_type}} </td>
 
-             <td data-label="Alunos"> {{teacher.total_students}} </td>
+            <td data-label="Alunos"> {{teacher.total_students}} </td>
 
             <td><a href="/teachers/{{teacher.id}}">ver</a></td>
-
           </tr>
-
         {% endfor %}
 
       </tbody>
